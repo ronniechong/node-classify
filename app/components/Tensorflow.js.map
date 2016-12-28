@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/components/Tensorflow.js"],"names":["Tensorflow"],"mappings":";;;;;AAAO,IAAMA,kCAAa,SAAbA,UAAa,GAAM;AAC5B;;AAEA;;AAEA;;;AAGA;AACH,CATM","file":"Tensorflow.js","sourcesContent":["export const Tensorflow = () => {\r\n    // constructor(){\r\n\r\n    // };\r\n\r\n    // callLabelImages(graph,imageurl){\r\n\r\n\r\n    // };\r\n}"]}

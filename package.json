@@ -1,0 +1,30 @@
+{
+  "name": "node-classify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "babel -w src/ -d app/ --source-maps -s"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "crypto": "0.0.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "file-downloader": "^2.1.0",
+    "image-downloader": "^2.0.0",
+    "image-type": "^2.1.0",
+    "mime": "^1.3.4",
+    "multer": "^1.2.1",
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "nodemon": "^1.11.0"
+  }
+}
