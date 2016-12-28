@@ -6,9 +6,18 @@ import Crypto from 'crypto';
 import Multer from 'multer';
 import Promise from 'promise';
 import Fs from 'fs';
+import Path from 'path';
+import {spawn} from 'child_process';
+
+const HOME = Path.resolve(__dirname);
+const BASHSCRIPT = Path.resolve(__dirname,'../bash/run.sh');
+
+// const bashCall = spawn(BASHSCRIPT, ['first', 'path/to/image/temp.jpg']);
+// bashCall.stdout.on('data', (data) => {
+//   console.log(`stdout: ${data}`);
+// });
 
 Dotenv.config();
-
 let app = Express();
 app.use(BodyParser.urlencoded({extended: true})); 
 app.use(BodyParser.json());
@@ -28,10 +37,10 @@ let storage = Multer.diskStorage({
 let uploadMulter = Multer({storage:storage}).single('image');
 
 app.post('/classify', uploadMulter, (req, res) =>{
-    res.status(200).json(req.file);
+  //  res.status(200).json(req.file);
    // Fs.unlink(req.file.path); //remove file
+   res.send('Done')
 });
-
 
 app.get('/', (req, res) => {
     res.send('Nothing to see here')

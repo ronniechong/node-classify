@@ -28,10 +28,23 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _child_process = require('child_process');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_dotenv2.default.config();
+var HOME = _path2.default.resolve(__dirname);
+var BASHSCRIPT = _path2.default.resolve(__dirname, '../bash/run.sh');
 
+// const bashCall = spawn(BASHSCRIPT, ['first', 'path/to/image/temp.jpg']);
+// bashCall.stdout.on('data', (data) => {
+//   console.log(`stdout: ${data}`);
+// });
+
+_dotenv2.default.config();
 var app = (0, _express2.default)();
 app.use(_bodyParser2.default.urlencoded({ extended: true }));
 app.use(_bodyParser2.default.json());
@@ -51,8 +64,9 @@ var storage = _multer2.default.diskStorage({
 var uploadMulter = (0, _multer2.default)({ storage: storage }).single('image');
 
 app.post('/classify', uploadMulter, function (req, res) {
-    res.status(200).json(req.file);
+    //  res.status(200).json(req.file);
     // Fs.unlink(req.file.path); //remove file
+    res.send('Done');
 });
 
 app.get('/', function (req, res) {
